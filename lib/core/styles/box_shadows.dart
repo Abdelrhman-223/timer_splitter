@@ -19,24 +19,24 @@ BoxShadow boxShadow(bool negativeOffset, BlurStyle blurStyle, Color shadowColor)
 }
 
 class BoxShadows {
-  static List<BoxShadow> usedOuterShadow = lightOuter;
-  static List<BoxShadow> usedInnerShadow = lightInner;
+  static List<BoxShadow> usedOuterShadow = darkOuter;
+  static List<BoxShadow> usedInnerShadow = darkInner;
 
   static List<BoxShadow> darkOuter = [
-    boxShadow(true, BlurStyle.outer, const Color.fromRGBO(225, 225, 225, 0.10)),
-    boxShadow(false, BlurStyle.outer, const Color.fromRGBO(0, 0, 0, 1)),
+    boxShadow(true, BlurStyle.normal, const Color.fromRGBO(225, 225, 225, 0.15)),
+    boxShadow(false, BlurStyle.normal, const Color.fromRGBO(0, 0, 0, 1)),
   ];
 
   static List<BoxShadow> darkInner = [
-    boxShadow(true, BlurStyle.inner, const Color.fromRGBO(225, 225, 225, 0.10)),
-    boxShadow(false, BlurStyle.inner, const Color.fromRGBO(0, 0, 0, 1)),
+    boxShadow(false, BlurStyle.solid, const Color.fromRGBO(225, 225, 225, 0.15)),
+    boxShadow(true, BlurStyle.solid, const Color.fromRGBO(0, 0, 0, 1)),
   ];
   static List<BoxShadow> lightOuter = [
     boxShadow(true, BlurStyle.outer, const Color.fromRGBO(0, 0, 0, 0.25)),
     boxShadow(false, BlurStyle.outer, const Color.fromRGBO(0, 0, 0, 0.25)),
   ];
   static List<BoxShadow> lightInner = [
-    boxShadow(true, BlurStyle.inner, const Color.fromRGBO(0, 0, 0, 0.25)),
     boxShadow(false, BlurStyle.inner, const Color.fromRGBO(0, 0, 0, 0.25)),
+    boxShadow(true, BlurStyle.inner, const Color.fromRGBO(0, 0, 0, 0.25)),
   ];
 }

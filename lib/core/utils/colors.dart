@@ -10,8 +10,8 @@ import 'package:flutter/material.dart';
 
 class MyColors {
 
-  static Color mainColor = lightMainColor;
-  static Color secondColor = lightSecondColor;
+  static Color mainColor = darkMainColor;
+  static Color secondColor = darkSecondColor;
   static Color thirdColor = thirdColor1;
 
   //TS-Dark Mood

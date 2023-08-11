@@ -25,8 +25,8 @@ class Timer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
       decoration: BoxDecoration(
         //get the created outer box shadow
-        boxShadow: BoxShadows.usedOuterShadow,
         color: MyColors.mainColor,
+        boxShadow: BoxShadows.usedOuterShadow,
         borderRadius: BorderRadius.circular(timerDimension / 2),
       ),
       child: const Row(

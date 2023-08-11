@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:timer_splitter/core/utils/colors.dart';
 import 'package:timer_splitter/core/widgets/timer.dart';
 
+import 'core/styles/box_shadows.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -41,11 +43,30 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.mainColor,
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Timer(),
+            const Timer(),
+            Container(
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                color: MyColors.mainColor,
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: BoxShadows.darkOuter,
+              ),
+            ),
+            Container(
+              width: 50,
+              height: 50,
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: MyColors.mainColor,
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: BoxShadows.darkInner,
+              ),
+            ),
           ],
         ),
       ),
