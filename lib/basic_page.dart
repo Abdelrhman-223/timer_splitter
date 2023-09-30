@@ -7,10 +7,8 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:timer_splitter/add_timer/presentation/pages/add_timer_page.dart';
 import 'package:timer_splitter/app_timers/presentation/pages/app_timers_page.dart';
-import 'package:timer_splitter/core/styles/box_shadows.dart';
 import 'package:timer_splitter/core/utils/colors.dart';
 import 'package:timer_splitter/history/presentation/pages/history_age.dart';
 import 'package:timer_splitter/home/presentation/pages/home_page.dart';
@@ -28,7 +26,7 @@ class BasicPage extends StatefulWidget {
 class _BasicPageState extends State<BasicPage> {
   int bottomNavigationBarItemIndex = 2;
 
-  List<Widget> pages = const [
+  List<Widget> pages = [
     HistoryPage(),
     SittingPage(),
     HomePage(),
@@ -47,6 +45,7 @@ class _BasicPageState extends State<BasicPage> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Row(
+          textDirection: TextDirection.ltr,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             GestureDetector(
@@ -119,67 +118,6 @@ class _BasicPageState extends State<BasicPage> {
           ],
         ),
       ),
-      /*bottomNavigationBar: BottomNavigationBar(
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: MyColors.mainColor,
-        currentIndex: bottomNavigationBarItemIndex,
-        onTap: (value) async {
-          setState(() {
-            bottomNavigationBarItemIndex = value;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: BottomNavigationIconButton(
-              itemIndex: 0,
-              selectedIndex: bottomNavigationBarItemIndex,
-              iconPath: "assets/icons/History.svg",
-              addButton: false,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: BottomNavigationIconButton(
-              itemIndex: 1,
-              selectedIndex: bottomNavigationBarItemIndex,
-              iconPath: "assets/icons/Sitting.svg",
-              addButton: false,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: BottomNavigationIconButton(
-              itemIndex: 2,
-              selectedIndex: bottomNavigationBarItemIndex,
-              iconPath: (bottomNavigationBarItemIndex != 2)
-                  ? "assets/icons/Home.svg"
-                  : "assets/icons/Add.svg",
-              addButton: true,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: BottomNavigationIconButton(
-              itemIndex: 3,
-              selectedIndex: bottomNavigationBarItemIndex,
-              iconPath: "assets/icons/Timers.svg",
-              addButton: false,
-            ),
-            label: "",
-          ),
-          BottomNavigationBarItem(
-            icon: BottomNavigationIconButton(
-              itemIndex: 4,
-              selectedIndex: bottomNavigationBarItemIndex,
-              iconPath: "assets/icons/SandClock.svg",
-              addButton: false,
-            ),
-            label: "",
-          ),
-        ],
-      ),*/
     );
   }
 }
